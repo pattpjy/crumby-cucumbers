@@ -10,10 +10,11 @@ class Main extends Component {
         super();
         this.state = {
             allMovies: movieData.movies,
+            movieId: null,
         };
     }
 
-    displayMovies() {
+    displayMovies = () => {
         const allMovies = this.state.allMovies.map((movie) => {
             return <Card
                 poster={movie.poster_path}
@@ -26,13 +27,17 @@ class Main extends Component {
         return allMovies;
     }
 
-    clickHandler(event) {
-        console.log(event.target.id)
-
+    clickHandler = (event) => {
+        const Id = event.target.id
+        console.log(Id)
+        this.setState({ movieId: Id })
+        console.log(this.state.movieId)
     }
 
     render() {
-        return <div className="poster-display">{this.displayMovies()}</div>;
+        return <div className="poster-display">{
+            this.displayMovies()}
+        </div>;
     }
 }
 
