@@ -28,6 +28,7 @@ class Main extends Component {
 
     clickHandler(event) {
         console.log(event.target.id)
+
     }
 
     render() {
