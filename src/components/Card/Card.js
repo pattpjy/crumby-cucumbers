@@ -1,12 +1,11 @@
-import './Card.css'
+import "./Card.css";
 
-const Card = (poster_path, key) => {
-    console.log(key)
-    return(
-        <div>
-            <img src={poster_path.poster} key={key}></img>
-        </div>
-    )
-}
+const Card = ({ poster, id }) => {
+  return (
+    <div className="main-board">
+      <img className="poster" src={poster} id={id} alt=""></img>
+    </div>
+  );
+};
 
-export default Card
+export default Card;
