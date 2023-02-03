@@ -1,13 +1,21 @@
 import './App.css';
 import Main from '../Main/Main';
 import MovieDetails from '../MovieDetails/MovieDetails';
+import Header from '../Header/Header';
 import { Route, Link, Switch } from 'react-router-dom';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-        <Route path='/' component={ Main } />
-        <Route path='/details' component={ MovieDetails } />
+      <Header />
+      <Switch>
+        <Route exact path='/'>
+          <Main />
+        </Route>
+        <Route path='/details'>
+          <MovieDetails/>
+        </Route>
+      </Switch>
     </div>
   );
 }
