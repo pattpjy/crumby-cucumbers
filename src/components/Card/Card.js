@@ -4,7 +4,9 @@ import "./Card.css";
 const Card = ({ poster, id, alt, handleClick }) => {
   return (
     <div className="main-board" onClick={handleClick}>
-      <img className="poster" src={poster} id={id} alt={alt}></img>
+      <Link to={{ pathname: `/details/${id}`, state: { movieId: id } }}>
+        <img className="poster" src={poster} id={id} alt={alt}></img>
+      </Link>
     </div>
   );
 };

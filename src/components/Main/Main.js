@@ -2,14 +2,12 @@ import "./Main.css";
 import React, { Component } from "react";
 import movieData from "../../movieData";
 import Card from "../Card/Card";
-import { Link } from "react-router-dom";
 
 class Main extends Component {
   constructor() {
     super();
     this.state = {
       allMovies: movieData.movies,
-      movieId: 0,
     };
   }
 
@@ -31,8 +29,6 @@ class Main extends Component {
   clickHandler = (event) => {
     const Id = event.target.id;
     console.log(Id);
-
-    this.setState({ movieId: Id });
   };
 
   render() {
