@@ -13,7 +13,7 @@ const App = () => {
           <Main />
         </Route>
         <Route path='/details'>
-          <MovieDetails/>
+          <MovieDetails />
         </Route>
       </Switch>
     </div>
