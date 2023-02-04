@@ -4,6 +4,7 @@ import React, { Component } from "react";
 import Card from "../Card/Card";
 
 class Main extends Component {
+
   constructor() {
     super();
     this.state = {
@@ -24,21 +25,6 @@ class Main extends Component {
         this.setState({ allMovies: data.movies });
       })
       .catch((error) => this.setState({ hasError: error.message }));
-  };
-
-  displayMovies = () => {
-    const allMovies = this.state.allMovies.map((movie) => {
-      return (
-        <Card
-          poster={movie.poster_path}
-          id={movie.id}
-          key={movie.id}
-          alt={movie.title}
-          handleClick={this.clickHandler}
-        />
-      );
-    });
-    return allMovies;
   };
 
   clickHandler = (event) => {
