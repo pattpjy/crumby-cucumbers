@@ -1,13 +1,13 @@
 import "./Main.css";
 import React, { Component } from "react";
-import movieData from "../../movieData";
+// import movieData from "../../movieData";
 import Card from "../Card/Card";
 
 class Main extends Component {
   constructor() {
     super();
     this.state = {
-      allMovies: movieData.movies,
+      allMovies: [],
     };
   }
 
@@ -16,7 +16,7 @@ class Main extends Component {
       .then((res) => res.json())
       .then((data) => {
         console.log(data.movies);
-        this.setState({ destinationData: data.movies });
+        this.setState({ allMovies: data.movies });
       })
       .catch((error) => console.log("error", error));
   };
