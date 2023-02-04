@@ -11,6 +11,16 @@ class Main extends Component {
     };
   }
 
+  componentDidMount = () => {
+    fetch("https://rancid-tomatillos.herokuapp.com/api/v2/movies")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data.movies);
+        this.setState({ destinationData: data.movies });
+      })
+      .catch((error) => console.log("error", error));
+  };
+
   displayMovies = () => {
     const allMovies = this.state.allMovies.map((movie) => {
       return (
