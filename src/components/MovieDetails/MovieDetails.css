@@ -1,4 +1,29 @@
+.movie-detail {
+  border: 2px solid black;
+  display: flex;
+  flex-direction: row;
+  max-width: fit-content;
+  height: auto;
+}
+
 .poster {
-    width: 200px;
-  }
-  
+  width: 200px;
+  max-width: 100%;
+  height: auto;
+}
+.movie-data {
+  max-width: 100%;
+  height: auto;
+}
+
+.data-list {
+  align-items: initial;
+}
+li {
+  margin: 10px 0 0 10px;
+  padding: 5px;
+}
+ul {
+  list-style: "\23EF";
+  text-align: left;
+}

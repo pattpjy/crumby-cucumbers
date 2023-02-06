@@ -39,7 +39,7 @@ const MovieDetails = () => {
   }, [movieId]);
 
   return (
-    <div>
+    <div className="movie-detail">
       {hasError && (
         <div className="submitErrorMessage">
           <p>
@@ -47,10 +47,19 @@ const MovieDetails = () => {
           </p>
         </div>
       )}
-      <p>{movieData.title}</p>
-      <p>{movieData.overview}</p>
-      <p>{movieData.average_rating}</p>
       <img className="poster" src={movieData.poster_path} alt=""></img>
+      <div className="movie-data">
+        <h2>{movieData.title}</h2>
+        <p>{movieData.overview}</p>
+        <ul className="data-list">
+          <li>Rating: {movieData.average_rating}</li>
+          <li>Release Date:{movieData.release_date}</li>
+          <li>Genres: {movieData.genres}</li>
+          <li>Budget{movieData.budget}</li>
+          <li>Revenue: {movieData.revenue}</li>
+          <li>Runtime: {movieData.runtime}</li>
+        </ul>
+      </div>
     </div>
   );
 };
