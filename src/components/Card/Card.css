@@ -9,5 +9,8 @@
 }
 
 .main-board :hover {
+  transition: 100ms linear all;
   width: 220px;
+  rotate: 5deg;
+
 }
