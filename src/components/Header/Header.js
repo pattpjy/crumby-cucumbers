@@ -5,8 +5,8 @@ const Header = () => {
   return (
     <div className="header" id="header">
       <Link to="/">
-        <h3 className="homeLink">Crumby Cucumbers</h3>
-      </Link>
+        <h1 className="homeLink">CRUMBY CUCUMBERS</h1>
+        </Link>
     </div>
   );
 };
