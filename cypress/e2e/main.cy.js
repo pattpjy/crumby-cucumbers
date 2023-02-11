@@ -14,7 +14,7 @@ describe("Main page", () => {
     });
     it("When user click movie card, it should have the correct URL", () => {
       cy.get("#root > div > div.poster-display > div > a")
-        .should("have.attr", "href", `/details/${sampleData.movies[0].id}`);
+        .should("have.attr", "href", `/details/436270`);
     });
   });
   describe("When API return an error", () => {
