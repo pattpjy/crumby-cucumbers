@@ -1,14 +1,21 @@
 .header {
     background-color: black;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     height: 10vh;
 }
 
 .homeLink {
     text-decoration: none;
+    height: 1px;
+    margin-left: -135%;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    margin-left: 1vw;
     color: white;
+}
+
+.gif {
+    width: 6%;
+    margin-top: 1vh;
+    margin-left: -90%;
 }
