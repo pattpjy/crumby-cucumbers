@@ -5,12 +5,9 @@ import "./MovieDetails.css";
 const MovieDetails = () => {
   const location = useLocation();
   const movieId = location.pathname.split("/details/")[1];
-  //setting movieId to the hook that return location, this hook return id of the poster
-  console.log(movieId);
   const [movieData, setMovieData] = useState({});
   const [hasError, setHasError] = useState(null);
-  //useState is return a default of array with empty object(bc our data movie is an single object) ---deconstruct array with 2 elements
-  //two elements - 1 empty string and 2 a function that update the value that provided
+  
   useEffect(() => {
     const url =
       "https://rancid-tomatillos.herokuapp.com/api/v2/movies/" + movieId;
@@ -22,7 +19,6 @@ const MovieDetails = () => {
           throw new Error("Unable To Fetch Your Data. Try Later.");
         }
         const json = await response.json();
-        console.log(json.movie);
         setMovieData(json.movie);
       } catch (error) {
         setHasError(error.message);

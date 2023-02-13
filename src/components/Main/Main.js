@@ -1,6 +1,5 @@
 import "./Main.css";
 import React, { Component } from "react";
-// import movieData from "../../movieData";
 import Card from "../Card/Card";
 import SearchBar from "../Search/SearchBar";
 
@@ -22,7 +21,6 @@ class Main extends Component {
         return response.json();
       })
       .then((data) => {
-        console.log(data.movies);
         this.setState({ allMovies: data.movies, visibleMovies: data.movies });
       })
       .catch((error) => this.setState({ hasError: error.message }));
@@ -30,11 +28,12 @@ class Main extends Component {
 
   clickHandler = (event) => {
     const Id = event.target.id;
-    console.log(Id);
   };
+
   clearSearchResult = () => {
     this.setState({ visibleMovies: this.state.allMovies });
   };
+
   displayMovies = () => {
     const allMovies = this.state.visibleMovies.map((movie) => {
       return (
