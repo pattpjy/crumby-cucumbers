@@ -7,8 +7,8 @@ const Header = () => {
     <div className="header" id="header">
       <Link to="/">
         <img src={homeGif} className='gif'></img>
-        </Link>
-        <h1 className="homeLink">CRUMBY CUCUMBERS</h1>
+      </Link>
+      <h1 className="homeLink">CRUMBY CUCUMBERS</h1>
     </div>
   );
 };

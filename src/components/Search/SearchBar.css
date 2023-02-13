@@ -1,0 +1,17 @@
+.search {
+    width: 20vw;
+    height: 4vh;
+    background-color: black;
+    color: white;
+    border: 2px white solid;
+    border-radius: 10px;
+    margin-right: 5px;
+}
+
+.clear {
+    border-radius: 10px;
+    border: 2px white solid;
+    color: white;
+    background-color: black;
+    height: 4.75vh;
+}
