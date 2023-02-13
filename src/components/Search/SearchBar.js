@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 
 const SearchBar = ({ searchMovies, clearSearchResult }) => {
   const [searchInput, setSearchInput] = useState("");
@@ -39,3 +40,8 @@ const SearchBar = ({ searchMovies, clearSearchResult }) => {
 };
 
 export default SearchBar;
+
+SearchBar.propTypes = {
+  searchMovies: PropTypes.func.isRequired,
+  clearSearchResult: PropTypes.func.isRequired,
+};
