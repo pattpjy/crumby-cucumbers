@@ -49,15 +49,15 @@ const MovieDetails = () => {
       )}
       <img className="poster" src={movieData.poster_path} alt=""></img>
       <div className="movie-data">
-        <h2>{movieData.title}</h2>
-        <p>{movieData.overview}</p>
+        <h2 className="title">{movieData.title}</h2>
+        <p className="overView">{movieData.overview}</p>
         <ul className="data-list">
           <li>Rating: {movieData.average_rating}</li>
-          <li>Release Date:{movieData.release_date}</li>
+          <li>Release Date: {movieData.release_date}</li>
           <li>Genres: {movieData.genres}</li>
-          <li>Budget{movieData.budget}</li>
-          <li>Revenue: {movieData.revenue}</li>
-          <li>Runtime: {movieData.runtime}</li>
+          <li>Budget: ${movieData.budget}</li>
+          <li>Revenue: ${movieData.revenue}</li>
+          <li>Runtime: {movieData.runtime} minutes</li>
         </ul>
       </div>
     </div>
