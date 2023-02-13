@@ -7,21 +7,18 @@
 
 <br />
 <div align="center">
-  <a href="https://github.com/github_username/repo_name">
-    Add Image or Logo of the project
+  
+  <a href="https://github.com/Mrcolin99/crumby-cucumbers">
+ 
   </a>
 
-<h3 align="center">Idea Box</h3>
+<h3 align="center">Crummy Cucumber</h3>
 
   <p align="center">
-    Idea Box App
+    Crummy Cucumber
     <br />
-    <a href="https://github.com/pattpjy/ps-reactideabox"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/Mrcolin99/crumby-cucumbers"><strong>Explore the docs »</strong></a>
     <br />
-    <br />
-    <a href="https://github.com/pattpjy/ps-reactideabox/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/pattpjy/ps-reactideabox/issues">Request Feature</a>
   </p>
 </div>
 
@@ -46,16 +43,8 @@
 </details>
 
 ## About The Project
-
-
-
-
-
-Add vdo walk through
-
-Add Project description 
-
-
+This project is to create a movie database using react in order to gain competency with react and to create a multi-page UX using Router. This project allow user to see lost of movie poster and access movie;s detail by clicking the poster. User also can search for movie using movies title. This application UI is tested by using Cypress end-to-end testing tools.
+ 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Built With
@@ -77,45 +66,28 @@ Add Project description
 
 ### Installation
 
-1. Fork the Repo from the [Repository](https://github.com/turingschool-examples/fitlit-starter-kit)
-2. Clone the repo
+1. Clone the repo
    ```sh
-   git clone git@github.com:pattpjy/ps-reactideabox.git
+   git clone git@github.com:Mrcolin99/crumby-cucumbers.git
    ```
-3. Install NPM packages
+2. Install NPM packages
    ```sh
    npm install
    ```
-4. Run npm start
+3. Run npm start
    ```sh
    npm start
    ```
-5. Use the Link that is given in the Terminal & Open in Browser
+4. Use the Link that is given in the Terminal & Open in Browser
    ```sh
    Example: http://localhost:8080/
    ```
    
-## API Installation
 
-6. Clone the repo
-      ```sh
-   git clone git@github.com:xxxx
-   ```
-7. cd into it from terminal
-8. Install NPM packages
-   ```sh
-   npm install
-   ```
-9. Run npm start
-   ```sh
-   npm start
-   ```
-10. Close using control + c
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ARCHITECTURE -->
 ## Architecture
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <!-- ROADMAP -->
