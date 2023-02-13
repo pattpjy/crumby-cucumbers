@@ -54,8 +54,6 @@ This project is to create a movie database using react in order to gain competen
 - [![HTML][html]][html-url]
 - [![Webpack][webpack]][webpack-url]
 - [![API][api]][api-url]
-- [![Mocha][mocha]][mocha-url]
-- [![Chai][chai]][chai-url]
 - [![Git][git]][git-url]
 - [![GitHub][github]][github-url]
 
@@ -88,21 +86,27 @@ This project is to create a movie database using react in order to gain competen
 <!-- ARCHITECTURE -->
 ## Architecture
 
+<img width="958" alt="Screen Shot 2023-02-13 at 2 38 29 PM" src="https://user-images.githubusercontent.com/111454351/218583771-5291b257-b8d8-4f1a-bdfe-f6208535abf5.png">
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <!-- ROADMAP -->
 
 ## Roadmap
 
-- [] Need update
-- [] Need update
+- [x] Displaying movies
+- [x] Displaying an individual movie
+- [x] Network Requests & Async JS]
+- [x] Refactoring with Router, Testing with Cypress
+- [x] Add a search/filtering functionality for movies
+- [x] Deploy your React app
+
 
 See the [open issues](https://github.com/pattpjy/ps-reactideabox/issues) for a full list of proposed features (and known issues).
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Future Additions
 
-- need update
+- Create your own Express microservice to store user ratings for movie
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
