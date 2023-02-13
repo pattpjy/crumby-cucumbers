@@ -78,7 +78,7 @@ This project is to create a movie database using react in order to gain competen
    ```
 4. Use the Link that is given in the Terminal & Open in Browser
    ```sh
-   Example: http://localhost:8080/
+   Example: http://localhost:3000/
    ```
    
 
