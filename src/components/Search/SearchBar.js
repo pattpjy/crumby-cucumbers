@@ -40,3 +40,8 @@ const SearchBar = ({ searchMovies, clearSearchResult }) => {
 };
 
 export default SearchBar;
+
+SearchBar.propTypes = {
+  searchMovies: PropTypes.func.isRequired,
+  clearSearchResult: PropTypes.func.isRequired,
+};

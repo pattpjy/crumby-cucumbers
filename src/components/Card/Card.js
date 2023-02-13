@@ -15,8 +15,8 @@ const Card = ({ poster, id, alt, handleClick }) => {
 export default Card;
 
 Card.propTypes = {
-  poster: PropTypes.string,
-  id: PropTypes.number,
-  alt: PropTypes.string,
-  handleClick: PropTypes.func,
+  poster: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
+  alt: PropTypes.string.isRequired,
+  handleClick: PropTypes.func.isRequired,
 };
