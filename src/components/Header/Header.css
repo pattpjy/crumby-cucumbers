@@ -9,13 +9,13 @@
 .homeLink {
     text-decoration: none;
     height: 1px;
-    margin-left: -135%;
+    margin-left: -138%;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: white;
 }
 
 .gif {
-    width: 6%;
+    width: 5%;
     margin-top: 1vh;
     margin-left: -90%;
 }

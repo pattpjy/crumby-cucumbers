@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import './SearchBar.css'
 
 const SearchBar = ({ searchMovies, clearSearchResult }) => {
   const [searchInput, setSearchInput] = useState("");
@@ -10,12 +11,6 @@ const SearchBar = ({ searchMovies, clearSearchResult }) => {
   const submitSearch = (e) => {
     e.preventDefault();
     searchMovies(searchInput);
-    // if ({ searchInput } === "") {
-    //   setSearchInput({ incompleteForm: true });
-    // } else {
-    //   setSearchInput({ incompleteForm: false });
-    //   searchMovies({ searchInput });
-    // }
   };
   const clearSearch = (e) => {
     setSearchInput("");
@@ -25,16 +20,14 @@ const SearchBar = ({ searchMovies, clearSearchResult }) => {
   return (
     <div>
       <input
+        className="search"
         type="text"
-        placeholder="Search here"
+        placeholder="Search"
         onChange={handleChange}
         value={searchInput}
+        onKeyUp={(event) => submitSearch(event)}
       />
-      <button onClick={(event) => submitSearch(event)}>SUBMIT</button>
-      {/* {this.state.incompleteForm && (
-        <div className="incomplete-form">Please fill all the boxes</div>
-      )} */}
-      <button onClick={(event) => clearSearch(event)}>CLEAR</button>
+      <button className="clear" onClick={(event) => clearSearch(event)}>CLEAR</button>
     </div>
   );
 };

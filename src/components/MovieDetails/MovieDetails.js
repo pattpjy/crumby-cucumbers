@@ -15,7 +15,6 @@ const MovieDetails = () => {
     const url =
       "https://rancid-tomatillos.herokuapp.com/api/v2/movies/" + movieId;
     async function fetchData() {
-      // You can await here
 
       try {
         const response = await fetch(url);
@@ -30,12 +29,6 @@ const MovieDetails = () => {
       }
     }
     fetchData();
-
-    // const fetchMovie = () =>
-    //   fetch(url)
-    //     .then((res) => res.json())
-    //     .then((data) => setMovieData(data.movie));
-    // this is causing an infinite loop so we won't use it for now
   }, [movieId]);
 
   return (
