@@ -2,13 +2,20 @@ import "./Main.css";
 import React, { useEffect, useState } from "react";
 import Card from "../Card/Card";
 import SearchBar from "../Search/SearchBar";
+import ClipLoader from "react-spinners/ClipLoader";
 
 const Main = () => {
   const [allMovies, setAllMovies] = useState([]);
   const [visibleMovies, setVisibleMovies] = useState([]);
   const [hasError, setHasError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 4000);
+
     const url = "https://rancid-tomatillos.herokuapp.com/api/v2/movies";
     async function fetchData() {
       try {
@@ -63,16 +70,26 @@ const Main = () => {
           clearSearchResult={clearSearchResult}
         />
       </div>
-      <div className="poster-display">
-        {hasError && (
-          <div className="submitErrorMessage">
-            <p>
-              <strong>{hasError}</strong>
-            </p>
-          </div>
-        )}
-        {displayMovies()}
-      </div>
+      {loading ? (
+        <ClipLoader
+          color="#36d7b7"
+          loading={loading}
+          size={80}
+          aria-label="Loading Spinner"
+          data-testid="loader"
+        />
+      ) : (
+        <div className="poster-display">
+          {hasError && (
+            <div className="submitErrorMessage">
+              <p>
+                <strong>{hasError}</strong>
+              </p>
+            </div>
+          )}
+          {displayMovies()}
+        </div>
+      )}
     </div>
   );
 };
