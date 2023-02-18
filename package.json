@@ -1,5 +1,6 @@
 {
-  "name": "crumby-cucumber",
+  "homepage": "https://pattpjy.github.io/crummy-cucumber",
+  "name": "crummy-cucumber",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
