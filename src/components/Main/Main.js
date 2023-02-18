@@ -1,83 +1,157 @@
 import "./Main.css";
-import React, { Component } from "react";
+import React, { useEffect, useState } from "react";
 import Card from "../Card/Card";
 import SearchBar from "../Search/SearchBar";
 
-class Main extends Component {
-  constructor() {
-    super();
-    this.state = {
-      allMovies: [],
-      visibleMovies: [],
-    };
-  }
+const Main = () => {
+  const [allMovies, setAllMovies] = useState([]);
+  const [visibleMovies, setVisibleMovies] = useState([]);
+  const [hasError, setHasError] = useState("");
 
-  componentDidMount = () => {
-    fetch("https://rancid-tomatillos.herokuapp.com/api/v2/movies")
-      .then((response) => {
+  useEffect(() => {
+    const url = "https://rancid-tomatillos.herokuapp.com/api/v2/movies";
+    async function fetchData() {
+      try {
+        const response = await fetch(url);
         if (!response.ok) {
           throw new Error("Unable To Fetch Your Data. Try Later.");
         }
-        return response.json();
-      })
-      .then((data) => {
-        this.setState({ allMovies: data.movies, visibleMovies: data.movies });
-      })
-      .catch((error) => this.setState({ hasError: error.message }));
+        const json = await response.json();
+        setAllMovies(json.movies);
+        setVisibleMovies(json.movies);
+      } catch (error) {
+        setHasError(error.message);
+      }
+    }
+    fetchData();
+  }, []);
+
+  const clearSearchResult = () => {
+    setVisibleMovies(allMovies);
   };
 
-  clickHandler = (event) => {
-    const Id = event.target.id;
-  };
-
-  clearSearchResult = () => {
-    this.setState({ visibleMovies: this.state.allMovies });
-  };
-
-  displayMovies = () => {
-    const allMovies = this.state.visibleMovies.map((movie) => {
+  const displayMovies = () => {
+    const displayAll = visibleMovies.map((movie) => {
       return (
         <Card
           poster={movie.poster_path}
           id={movie.id}
           key={movie.id}
           alt={movie.title}
-          handleClick={this.clickHandler}
+          handleClick={clickHandler}
         />
       );
     });
-    return allMovies;
+    return displayAll;
+  };
+  const clickHandler = (event) => {
+    return event.target.id;
   };
 
-  displaySearch = (searchInput) => {
-    const searchMovies = this.state.allMovies.filter((movie) =>
+  const displaySearch = (searchInput) => {
+    const searchMovies = allMovies.filter((movie) =>
       movie.title.toLowerCase().includes(searchInput.toLowerCase())
     );
-    this.setState({ visibleMovies: searchMovies });
+    setVisibleMovies(searchMovies);
   };
 
-  render() {
-    return (
-      <div>
-        <div className="search-bar">
-          <SearchBar
-            searchMovies={this.displaySearch}
-            clearSearchResult={this.clearSearchResult}
-          />
-        </div>
-        <div className="poster-display">
-          {this.state.hasError && (
-            <div className="submitErrorMessage">
-              <p>
-                <strong>{this.state.hasError}</strong>
-              </p>
-            </div>
-          )}
-          {this.displayMovies()}
-        </div>
+  return (
+    <div>
+      <div className="search-bar">
+        <SearchBar
+          searchMovies={displaySearch}
+          clearSearchResult={clearSearchResult}
+        />
       </div>
-    );
-  }
-}
+      <div className="poster-display">
+        {hasError && (
+          <div className="submitErrorMessage">
+            <p>
+              <strong>{hasError}</strong>
+            </p>
+          </div>
+        )}
+        {displayMovies()}
+      </div>
+    </div>
+  );
+};
+
+// class Main$ extends Component {
+//   constructor() {
+//     super();
+//     this.state = {
+//       allMovies: [],
+//       visibleMovies: [],
+//     };
+//   }
+
+//   componentDidMount = () => {
+//     fetch("https://rancid-tomatillos.herokuapp.com/api/v2/movies")
+//       .then((response) => {
+//         if (!response.ok) {
+//           throw new Error("Unable To Fetch Your Data. Try Later.");
+//         }
+//         return response.json();
+//       })
+//       .then((data) => {
+//         this.setState({ allMovies: data.movies, visibleMovies: data.movies });
+//       })
+//       .catch((error) => this.setState({ hasError: error.message }));
+//   };
+
+//   clickHandler = (event) => {
+//     const Id = event.target.id;
+//   };
+
+//   clearSearchResult = () => {
+//     setVisibleMovies(allMovies);
+//   };
+
+//   displayMovies = () => {
+//     const allMovies = this.state.visibleMovies.map((movie) => {
+//       return (
+//         <Card
+//           poster={movie.poster_path}
+//           id={movie.id}
+//           key={movie.id}
+//           alt={movie.title}
+//           handleClick={this.clickHandler}
+//         />
+//       );
+//     });
+//     return allMovies;
+//   };
+
+//   displaySearch = (searchInput) => {
+//     const searchMovies = this.state.allMovies.filter((movie) =>
+//       movie.title.toLowerCase().includes(searchInput.toLowerCase())
+//     );
+//     this.setState({ visibleMovies: searchMovies });
+//   };
+
+//   render() {
+//     return (
+//       <div>
+//         <div className="search-bar">
+//           <SearchBar
+//             searchMovies={this.displaySearch}
+//             clearSearchResult={this.clearSearchResult}
+//           />
+//         </div>
+//         <div className="poster-display">
+//           {this.state.hasError && (
+//             <div className="submitErrorMessage">
+//               <p>
+//                 <strong>{this.state.hasError}</strong>
+//               </p>
+//             </div>
+//           )}
+//           {this.displayMovies()}
+//         </div>
+//       </div>
+//     );
+//   }
+// }
 
 export default Main;
