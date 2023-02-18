@@ -1,0 +1,16 @@
+.poster {
+  width: 200px;
+  border-radius: 8%;
+  margin-top: 0.5vh;
+  margin-bottom: 0.5vh;
+  margin-right: 0.5vw;
+  margin-left: 0.5vw;
+
+}
+
+.main-board :hover {
+  transition: 100ms linear all;
+  width: 220px;
+  rotate: 5deg;
+
+}
